@@ -3,7 +3,7 @@ const app = require('./../../src/app')
 
 describe('Users routes cases', () => {
   describe('create users cases', () => {
-    test('sucessful create user request by username and password', async () => {
+    test('sucessful create user request by username and password and get sucessful message', async () => {
       const username = 'MyUsernameIsThis'
       const password = 'AndMyPasswordIsThis'
 
