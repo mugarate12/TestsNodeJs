@@ -3,7 +3,7 @@ const app = require('./../../src/app')
 
 describe('Users routes cases', () => {
   describe('create users cases', () => {
-    test('sucessful create user request', async () => {
+    test('sucessful create user request by username and password', async () => {
       const username = 'MyUsernameIsThis'
       const password = 'AndMyPasswordIsThis'
 
@@ -18,7 +18,7 @@ describe('Users routes cases', () => {
       expect(createUserRequest.body.sucess).toBe('Usuario criado com sucesso!')
     })
 
-    test('failure to create user request  ', async () => {
+    test('failure to create user request by username already exists, and get Error', async () => {
       const username = 'MyUsernameIsThis'
       const password = 'AndMyPasswordIsThis'
 
@@ -36,7 +36,7 @@ describe('Users routes cases', () => {
   })
 
   describe('get user cases', () => {
-    test('get user by username request', async () => {
+    test('sucessful get user by username param and get user id and username', async () => {
       const username = 'MyUsernameIsThis'
 
       const getUserRequest = await request(app)
@@ -44,7 +44,6 @@ describe('Users routes cases', () => {
 
       expect(getUserRequest.status).toBe(200)
       expect(getUserRequest.body.user.username).toBeDefined()
-      expect(getUserRequest.body.user.password).toBeDefined()
     })
   })
   

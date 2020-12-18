@@ -20,8 +20,7 @@ module.exports = {
       if (users[index].username === username) {
         return {
           id: index,
-          username: users[index].username,
-          password: users[index].password
+          username: users[index].username
         }
       }
     }

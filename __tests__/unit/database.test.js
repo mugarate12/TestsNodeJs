@@ -2,7 +2,7 @@ const DatabaseUsers = require('./../../src/database/users')
 
 describe('Database Cases', () => {
   describe('Users Cases', () => {
-    test('create user in database', () => {
+    test('create user in database by username and password, expected "1" to sucessful request', () => {
       const username = 'MyUsernameIsThis'
       const password = 'AndMyPasswordIsThis'
 
@@ -11,7 +11,7 @@ describe('Database Cases', () => {
       expect(createUser).toBe(1)
     })
 
-    test('failure to create user in database by user already exists', () => {
+    test('failure to create user in database by user already exists and get Error', () => {
       const username = 'MyUsernameIsThis'
       const password = 'AndMyPasswordIsThis'
       let notCreateUser
